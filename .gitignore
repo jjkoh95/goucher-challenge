@@ -1,0 +1,18 @@
+# remove vendor files
+vendor/
+
+# remove go build binary
+main
+
+# Makefile
+
+# environment variables
+.env.sh
+
+# cloud proxy - fucking annoying
+cloud_sql_proxy
+cloudsql/
+connect_sql_proxy.sh
+
+# credentials file
+credentials.json

@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "526f8c32-d24a-47ba-b625-ca4e57af7dc2",
+		"name": "Goucher Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[Get] /recipient - Get all recipients basic info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/recipient",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recipient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] /recipient - Create new recipient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"babyjun123@gmail.com\",\n\t\"name\": \"Baby Jun\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/recipient",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recipient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Get] /recipient/{email} - Get recipient info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/recipient/babyjun123@gmail.com",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recipient",
+						"babyjun123@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] /offer - Create offer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"offerName\": \"15% off\",\n\t\"discountPercentage\": 15,\n\t\"expiredAt\": \"2020-03-01T00:00:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/offer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"offer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] /voucher/redeem - Redeem voucher",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"jjkoh95@gmail.com\",\n\t\"voucherCode\": \"81b60618\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/voucher/redeem",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"voucher",
+						"redeem"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
