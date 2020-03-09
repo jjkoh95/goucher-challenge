@@ -48,7 +48,8 @@ func RedeemVoucher(voucher *Voucher) error {
 // GetActiveVoucherByCode finds the active voucher by code
 func GetActiveVoucherByCode(recipientID uint, code string) (Voucher, error) {
 	var voucher Voucher
-	err := Db.Where("code = ? AND expired_at > ? AND redeemed_at IS NULL", code, time.Now()).Find(&voucher).Error
+	err := Db.Where("recipient_id = ? AND code = ? AND expired_at > ? AND redeemed_at IS NULL", recipientID, code, time.Now()).
+		Find(&voucher).Error
 	return voucher, err
 }
 
